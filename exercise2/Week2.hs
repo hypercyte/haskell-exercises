@@ -14,3 +14,17 @@ maxThreeSimplified x y z
     | y >= z  = y
     | otherwise         = z
 -- ...as it's evaluated from top to bottom
+
+
+
+-- EXERCISES START BELOW
+
+
+-- Three different values? Boolean output, 3 int input
+threeDifferent :: Int -> Int -> Int -> Bool
+threeDifferent x y z = 
+    not (x == y) && 
+    not (x == z) && 
+    not (y == z)
+-- There is no != operation so I had to use "not (evaluation)"
+
