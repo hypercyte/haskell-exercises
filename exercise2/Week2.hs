@@ -28,3 +28,18 @@ threeDifferent x y z =
     not (y == z)
 -- There is no != operation so I had to use "not (evaluation)"
 
+-- Task is to figure out what this does without using interpreter.
+mystery :: Int -> Int -> Int -> Bool
+mystery x y z = not (x == y && y == z)
+-- My answer:
+-- Takes in 3 Integers as input
+-- Returns boolean
+--
+-- x != y
+-- AND
+-- y != z
+-- BUT
+-- x could = z
+--
+-- Therefore the 2nd input value must be different from
+-- the first and third input value.
