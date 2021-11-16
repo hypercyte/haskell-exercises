@@ -43,3 +43,8 @@ mystery x y z = not (x == y && y == z)
 --
 -- Therefore the 2nd input value must be different from
 -- the first and third input value.
+
+-- After testing: 
+-- I was slightly wrong: This just meant that
+-- Y could be equal to X or Z but NOT BOTH OF THEM. 
+-- Y could also not be equal to either X and Z at all.
