@@ -46,5 +46,11 @@ mystery x y z = not (x == y && y == z)
 
 -- After testing: 
 -- I was slightly wrong: This just meant that
--- Y could be equal to X or Z but NOT BOTH OF THEM. 
--- Y could also not be equal to either X and Z at all.
+-- all 3 numbers CANNOT be the same in order for True response.
+
+
+-- Rewrite mystery but without use of "not"
+mysternt :: Int -> Int -> Int -> Bool
+mysternt x y z
+    | (x == y && y == z) = False
+    | otherwise          = True
