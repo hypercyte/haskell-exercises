@@ -46,7 +46,7 @@ mystery x y z = not (x == y && y == z)
 
 -- After testing: 
 -- I was slightly wrong: This just meant that
--- all 3 numbers CANNOT be the same in order for True response.
+-- all 3 numbers be the same in order for True response.
 
 
 -- Rewrite mystery but without use of "not"
@@ -54,3 +54,27 @@ mysternt :: Int -> Int -> Int -> Bool
 mysternt x y z
     | (x == y && y == z) = False
     | otherwise          = True
+
+-- Question 4:
+--
+-- Why does 0.1 + 1.1 = 1.20000000000002?
+--
+-- Answer:
+-- Because 0.1 doesnt exist in the 64-bit floating point world. (Michael O. Church, 2014)^1
+-- Floating point only represents dyadic rationals, meaning
+-- numbers with denominators with powers of 2.
+-- Therefore 1/10 (0.1) is converted to a dyadic number which
+-- becomes a number *very close* to 0.1 with a very tiny error.
+
+
+
+
+
+
+
+
+
+
+
+-- References
+-- 1. Quora, Michael O. Church, 2014 https://qr.ae/pGmDhE
