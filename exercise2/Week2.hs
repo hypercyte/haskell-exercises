@@ -66,7 +66,13 @@ mysternt x y z
 -- Therefore 1/10 (0.1) is converted to a dyadic number which
 -- becomes a number *very close* to 0.1 with a very tiny error.
 
-
+-- Floating point numbers are represented as binary fractions of limited precision. Just as
+-- you can’t represent one third as an exact decimal fraction, binary fractions and cannot
+-- represent decimal fractions exactly. The closest approximation is chosen, but it is off by
+-- a tiny amount. Sometimes these errors cancel out, but often they accumulate, resulting
+-- in the tiny difference between the two numbers here.
+-- You would get the same effect in Java or C. The moral of the story is that you should be
+-- very careful about comparing floating point numbers for equality, in any language
 
 
 
