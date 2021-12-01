@@ -41,3 +41,7 @@ timesPoint n (Point x y) = Point (x*n) (y*n)
 -- distance manhattan metric
 normPoint :: Point -> Int
 normPoint (Point x y) = (abs x) + (abs y)
+
+-- distance 2 points manhattan metric
+distance :: Point -> Point -> Int
+distance (Point x1 y1) (Point x2 y2) = normPoint (plusPoint (Point x1 y1) (Point x2 y2))
