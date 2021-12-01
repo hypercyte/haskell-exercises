@@ -36,4 +36,4 @@ minusPoint (Point x1 y1) (Point x2 y2) = Point (x1-x2) (y1-y2)
 
 -- times two points
 timesPoint :: Int -> Point -> Point
-timesPoint (Point x1 y1) (Point x2 y2) = Point (x1*x2) (y1*y2)
+timesPoint n (Point x y) = Point (x*n) (y*n)
