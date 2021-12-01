@@ -44,4 +44,12 @@ normPoint (Point x y) = (abs x) + (abs y)
 
 -- distance 2 points manhattan metric
 distance :: Point -> Point -> Int
-distance (Point x1 y1) (Point x2 y2) = normPoint (plusPoint (Point x1 y1) (Point x2 y2))
+distance p1 p2 = normPoint (minusPoint p1 p2)
+
+-- one step
+oneStep :: Direction -> Point
+oneStep North = plusPoint origin (Point 0    1   )
+oneStep East  = plusPoint origin (Point 1    0   )
+oneStep West  = plusPoint origin (Point (-1) 0   )
+oneStep South = plusPoint origin (Point 0    (-1))
+
