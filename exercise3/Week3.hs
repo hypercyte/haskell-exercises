@@ -23,6 +23,13 @@ pairMaybe Nothing (Just y) = Nothing
 pairMaybe (Just x) (Just y) = Just (x,y)
 
 -- same thing but since theres 3 nothings it could be similied to this!
-PairMaybe2 :: Maybe a -> Maybe b -> Maybe (a,b)
+pairMaybe2 :: Maybe a -> Maybe b -> Maybe (a,b)
 pairMaybe2 (Just x) (Just y) = Just (x,y)
 pairMaybe2 _ _ = Nothing
+
+-- extracts maybe value. returns default value if 2nd arg is Nothing
+-- x is the default value, but ideally should use 'def' instead in the future
+-- (makes no difference besides readability in code really)
+fromMaybe :: a -> Maybe a -> a
+fromMaybe x (Just y) = y
+fromMaybe x Nothing  = x
