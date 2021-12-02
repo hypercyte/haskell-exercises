@@ -33,3 +33,18 @@ pairMaybe2 _ _ = Nothing
 fromMaybe :: a -> Maybe a -> a
 fromMaybe x (Just y) = y
 fromMaybe x Nothing  = x
+
+-- return whatever is inside the either
+whatever :: Either a a -> a
+whatever (Left x)  = x
+whatever (Right y) = y
+
+-- Maybe but rewritten as a way for error messages
+data Err a = OK a | Error String
+    deriving Show
+
+both :: Err a -> Err b -> Err (a,b)
+both (OK x) (OK y) = OK (x,y)
+both (Error str) (OK y) = Error str
+both (OK x) (Error str) = Error str
+both (Error strX) (Error strY) = Error (strX ++ " | " ++ strY)
