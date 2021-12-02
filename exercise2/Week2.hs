@@ -1,5 +1,7 @@
 module Week2 where
 
+import Data.Char
+
 -- max of three values
 maxThree :: Int -> Int -> Int -> Int
 maxThree x y z
@@ -74,12 +76,17 @@ mysternt x y z
 -- You would get the same effect in Java or C. The moral of the story is that you should be
 -- very careful about comparing floating point numbers for equality, in any language
 
+-- Character to Number conversion
+charToNum :: Char -> Int
+charToNum x
+    | isDigit x = (ord x) - 48
+    | otherwise = 0
 
-
-
-
-
-
+-- Character to Number solution (my answr also correct, but this one avoids hardcoded values)
+charToNumSolution :: Char -> Int
+charToNumSolution c
+    | isDigit c = ord c - ord '0'
+    | otherwise = 0
 
 
 -- References
