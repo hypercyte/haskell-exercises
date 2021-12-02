@@ -8,3 +8,8 @@ swap (x,y) = (y,x)
 dup :: a -> (a,a)
 dup x = (x,x)
 
+-- safe division (dividing by 0 gives runtime error)
+safeDiv :: Int -> Int -> Maybe Int
+safeDiv x y
+    | y == 0    = Nothing
+    | otherwise = Just (div x y)

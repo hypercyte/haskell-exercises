@@ -52,4 +52,3 @@ oneStep North = plusPoint origin (Point 0    1   )
 oneStep East  = plusPoint origin (Point 1    0   )
 oneStep West  = plusPoint origin (Point (-1) 0   )
 oneStep South = plusPoint origin (Point 0    (-1))
-
