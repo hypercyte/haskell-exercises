@@ -66,6 +66,21 @@ frequency cs = [(head g, length g) | g <- group (sort cs)]
 -- g <- group (sort cs) = g is a list of sorted and grouped ver of input
 -- like ["1","aa","b","cccc"] if input was "bcacbc1c"
 
+frequencyAll :: Ord a => [a] -> [(a, Int)]
+frequencyAll cs = [(head g, length g) | g <- group (sort cs)]
+-- does the same as above but doesnt strictly require Chars
+-- i dont fully understand it yet tho (?)
 
+palindromic :: [Char] -> Bool
+palindromic cs = length [c | (c,n) <- frequency cs, odd n] <= 1
+-- im assuming this means:
+-- frequency of each char that has an ODD number of occurances gets added
+-- to the the list c
+-- AND if the length of list c (that just got created) is LESSTHAN or EQUAL
+-- TO 1
+-- (aka. there is only 1 or 0 letters which have an odd frequency of
+-- occuring in the input string)
+-- THEN the input is palindromic.
+-- anything otherwise is not.
 
 
