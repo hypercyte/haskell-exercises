@@ -84,3 +84,7 @@ palindromic cs = length [c | (c,n) <- frequency cs, odd n] <= 1
 -- anything otherwise is not.
 
 
+
+matchingLetters :: [Char] -> [Char] -> [Char]
+matchingLetters s1 s2 = [x | (x,y) <- (zip s1 s2), x == y]
+
