@@ -1,0 +1,39 @@
+module Week5 where
+
+import Data.Char
+import Data.List
+
+-- using map instead of the other way
+ordAll :: String -> [Int]
+ordAll cs = map ord cs
+
+-- this was the other way
+ordAllOld :: String -> [Int]
+ordAllOld cs = [ord c | c <- cs]
+
+doubleAll :: [Int] -> [Int]
+doubleAll ns = map double ns
+    where double x = 2*x
+
+-- filter simplies functions from before even more
+-- refer to exercise4 for letters
+pickEven ns = filter even ns
+
+letters cs = filter isAlpha cs
+
+doubleAlll :: [Int] -> [Int]
+doubleAlll ns = map double ns
+    where double x = 2*x
+--instead of writing this^
+-- we can write this v
+doubleAll2 :: [Int] -> [Int]
+doubleAll2 ns = map (\n -> 2*n) ns
+
+
+
+-- abbreviatging even further
+ordAllS = map ord
+
+lettersS = filter isAlpha
+
+
