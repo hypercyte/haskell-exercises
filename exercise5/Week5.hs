@@ -69,3 +69,9 @@ capitaliseLetters str = map toUpper $ filter isLetter str
 -- 2c) takeWhile (<1000) $ dropWhile (<=500) $ map (^2) [1..]
 
 
+count :: Eq a => a -> [a] -> Int
+count x ys = length [y | y <- ys, y == x]
+-- counts how many x there is in a list of y
+
+count2 ::Eq a => a -> [a] -> Int
+count2 x = length . filter (==x)
