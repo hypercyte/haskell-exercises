@@ -35,3 +35,15 @@ doubleAll2 ns = map (\n -> 2*n) ns
 ordAllS = map ord
 
 lettersS = filter isAlpha
+
+
+
+-- sum, product, and, or, concat
+mysum xs = foldr (+) 0 xs
+myproduct xs = foldr (*) 1 xs
+myand xs = foldr (&&) True xs
+myor xs = foldr (||) False xs
+myconcat xs = foldr (++) [] xs
+-- folding right (see notes05.pdf)
+
+
