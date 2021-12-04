@@ -47,3 +47,25 @@ myconcat xs = foldr (++) [] xs
 -- folding right (see notes05.pdf)
 
 
+-- EXERCISES START HERE
+
+-- task1
+capitalize :: String -> String
+capitalize = map toUpper
+
+capitals :: String -> String
+capitals = filter isUpper
+
+capitaliseLetters :: String -> String
+capitaliseLetters str = map toUpper $ filter isLetter str
+-- instead of $ using brackets would work like usual 
+-- map toUpper (filter isLetter str)
+
+
+--task2
+--expressions for finding stuff
+-- 2a) map (^2) [1..20]
+-- 2b) takeWhile (<500) $ map (^2) [1..500]
+-- 2c) takeWhile (<1000) $ dropWhile (<=500) $ map (^2) [1..]
+
+
